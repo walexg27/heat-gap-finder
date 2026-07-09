@@ -28,7 +28,7 @@ st.caption(
 
 @st.cache_data
 def load_data():
-    with open("sd_app.geojson") as f:
+    with open("sd_tracts.geojson") as f:
         tracts = json.load(f)
     with open("coolzones.geojson") as f:
         cool = json.load(f)
