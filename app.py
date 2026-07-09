@@ -52,7 +52,6 @@ metric  = METRICS[label]
 show_cz = st.sidebar.checkbox("Show existing Cool Zones", value=True)
 topn    = st.sidebar.slider("Rank the top N tracts", 5, 30, 8)
 
-# color scale for the selected metric
 vals = df[metric].dropna()
 colormap = cm.linear.YlOrRd_09.scale(float(vals.min()), float(vals.max()))
 colormap.caption = label
@@ -71,9 +70,9 @@ GeoJson(
     tracts,
     style_function=style_fn,
     tooltip=GeoJsonTooltip(
-        fields=["NAMELSAD", "priority_v2", "risk_score", "mean_lst_f",
+        fields=["area", "priority_v2", "risk_score", "mean_lst_f",
                 "dist_service_km", "population"],
-        aliases=["Tract:", "Priority:", "Risk:", "Temp (F):",
+        aliases=["Area:", "Priority:", "Risk:", "Temp (F):",
                  "Dist to relief (km):", "Population:"],
         localize=True,
     ),
@@ -95,8 +94,8 @@ with right:
     st.subheader(f"Top {topn} tracts by: {label}")
     table = (
         df.sort_values(metric, ascending=False)
-          .head(topn)[["NAMELSAD", metric, "population"]]
-          .rename(columns={"NAMELSAD": "Tract", metric: label})
+          .head(topn)[["area", metric, "population"]]
+          .rename(columns={"area": "Area", metric: label})
     )
     st.dataframe(table, hide_index=True, use_container_width=True)
 
