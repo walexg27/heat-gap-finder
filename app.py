@@ -39,9 +39,12 @@ def load_data():
 tracts, cool, df = load_data()
 
 METRICS = {
-    "Priority for a new site":            "priority_v2",
+    "Priority (blended heat)":            "priority_multi",
+    "Priority (daytime heat only)":       "priority_v2",
     "Composite heat-risk (SVI x heat)":   "risk_score",
-    "Land-surface temperature (F)":       "mean_lst_f",
+    "Daytime surface temp (F)":           "mean_lst_f",
+    "Nighttime surface temp (F)":         "night_lst_f",
+    "Air temperature (F)":                "air_tmax_f",
     "Distance to nearest relief (km)":    "dist_service_km",
     "Poverty rate":                       "poverty_rate",
     "% households with no vehicle":       "pct_no_vehicle",
@@ -52,6 +55,7 @@ metric  = METRICS[label]
 show_cz = st.sidebar.checkbox("Show existing Cool Zones", value=True)
 topn    = st.sidebar.slider("Rank the top N tracts", 5, 30, 8)
 
+# color scale for the selected metric
 vals = df[metric].dropna()
 colormap = cm.linear.YlOrRd_09.scale(float(vals.min()), float(vals.max()))
 colormap.caption = label
@@ -70,10 +74,10 @@ GeoJson(
     tracts,
     style_function=style_fn,
     tooltip=GeoJsonTooltip(
-        fields=["area", "priority_v2", "risk_score", "mean_lst_f",
-                "dist_service_km", "population"],
-        aliases=["Area:", "Priority:", "Risk:", "Temp (F):",
-                 "Dist to relief (km):", "Population:"],
+        fields=["area", "priority_multi", "risk_score", "mean_lst_f", "night_lst_f",
+                "air_tmax_f", "dist_service_km", "population"],
+        aliases=["Area:", "Priority:", "Risk:", "Day temp (F):", "Night temp (F):",
+                 "Air temp (F):", "Dist to relief (km):", "Population:"],
         localize=True,
     ),
 ).add_to(m)
