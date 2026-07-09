@@ -2,9 +2,9 @@
 
 An interactive map that flags the census tracts most in need of a new cooling or water site. It scores every tract in San Diego County on heat exposure, social vulnerability, population, and distance to existing relief, then ranks where a new site would help the most.
 
-**Live app:** https://heat-gap-finder.streamlit.app  *(replace with your exact deployed Streamlit URL)*
+**Live app:** https://heat-gap-finder.streamlit.app/#san-diego-county-heat-relief-gap-finder
 
-*[Author: your name] · [School / affiliation] · [Year]*
+*Alex Gutierrez · Torrey Pines High School  · Class of 2027*
 
 ---
 
