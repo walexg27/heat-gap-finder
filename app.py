@@ -52,7 +52,7 @@ PRIMARY = {
 }
 PRIMARY_CAPTIONS = [
     "Where a new site is most needed due to these factors: heat, social vulnerability, and "
-    "who can least cope (low AC), times service gap and population.",
+    "who can least cope (low AC), multiplied by service gap and population.",
     "How often a tract is top-priority across 5,000 randomized runs (1.0 = every run).",
     "Satellite land-surface temperature on a summer day.",
     "Composite of heat, CDC social vulnerability, and low air-conditioning access.",
