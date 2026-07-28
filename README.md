@@ -76,5 +76,6 @@ Air-conditioning access comes from **Shade SD / the San Diego Heat Risk Explorer
 
 ## License
 
-*[Add a license, for example MIT. Create a LICENSE file if you want others to reuse the code.]*
-*(Note: Shade SD data is CC BY 4.0 — attribution above satisfies its terms; your own code and analysis can carry your chosen license.)*
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+
+Shade SD's air-conditioning access data is used under CC BY 4.0; attribution is provided above and in the Acknowledgments section.
