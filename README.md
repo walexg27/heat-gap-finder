@@ -49,7 +49,6 @@ After folding in air-conditioning access, the robust core holds: all five origin
 - `requirements.txt` — Python dependencies.
 - `sd_tracts.geojson` — pre-computed tract data (scores, temperatures, priority, Monte Carlo confidence).
 - `coolzones.geojson` — the 72 Cool Zone locations.
-- *(`sd_app.geojson` is an older data file no longer used by the app; safe to delete.)*
 
 ## Run it locally
 
